@@ -1,0 +1,38 @@
+export EDITOR=vim
+
+mkcd(){
+mkdir -p "$1" && cd "$1"
+}
+copy(){
+"$1" | pbcopy
+}
+
+cds(){
+	cd "$1"
+	bash setup.sh
+}
+
+re-source(){
+	source ~/.zshrc
+}
+
+sql_start(){
+	pg_ctl -D /usr/local/var/postgres start
+}
+
+sql_stop(){
+	pg_ctl -D /usr/local/var/postgres stop
+}
+
+marco (){
+        cwd=$(pwd)
+}
+
+polo (){
+        cd $cwd
+}
+
+harvard (){
+ssh apalrecha@login.rc.fas.harvard.edu
+}
+

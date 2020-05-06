@@ -9,6 +9,6 @@ echo ".cfg" >> .gitignore
 git clone --bare https://github.com/akashpalrecha/dotfiles.git $HOME/.cfg
 config checkout
 config config --local status.showUntrackedFiles no
-echo "source ~/.zshrc" >> ~/.bashrc
+echo "source ~/.bash-extras" >> ~/.bashrc
 source ~/.bashrc
 ```
