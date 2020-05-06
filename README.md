@@ -2,7 +2,7 @@ From https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git
 
 First, delete any existing files that might conflict with the files in the repo and then run the below commands.
 
-```python
+```bash
 echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> ~/.bashrc
 source ~/.bashrc
 echo ".cfg" >> .gitignore
