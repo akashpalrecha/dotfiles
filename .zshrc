@@ -105,9 +105,9 @@ polo (){
         cd $cwd
 }
 
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 harvard (){
 ssh apalrecha@login.rc.fas.harvard.edu
 }
-alias config='/usr/bin/git --git-dir=/Users/akash/.cfg/ --work-tree=/Users/akash'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
