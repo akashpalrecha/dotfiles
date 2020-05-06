@@ -33,6 +33,14 @@ polo (){
 }
 
 harvard (){
-ssh apalrecha@login.rc.fas.harvard.edu
+ssh -L ${1}:localhost:${1} apalrecha@login.rc.fas.harvard.edu;
 }
+
+alias loadconda='module load Anaconda3/5.0.1-fasrc02'
+
+alias loadcuda='module load cuda/9.0-fasrc02 cudnn/7.0_cuda9.0-fasrc01'
+
+gpujob() { srun --pty -p cox -t 0-03:00 --mem ${1} --gres=gpu:1 /bin/bash; }
+
+fwport() { ssh -L ${1}:localhost:${1} ${2}; }
 
