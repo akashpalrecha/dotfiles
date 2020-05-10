@@ -42,6 +42,7 @@ alias loadconda='module load Anaconda3/5.0.1-fasrc02'
 alias loadcuda='module load cuda/9.0-fasrc02 cudnn/7.0_cuda9.0-fasrc01'
 
 gpujob() { srun --pty -p cox -t 0-${1}:${2} --mem ${3} --gres=gpu:1 /bin/bash; }
+cpujob() { srun --pty -p cox -t 0-${1}:${2} --mem ${3} -n $4} -N 1 /bin/bash; }
 
 fwport() { ssh -L ${1}:localhost:${1} ${2}; }
 
