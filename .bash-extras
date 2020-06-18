@@ -33,6 +33,10 @@ polo (){
         cd $cwd
 }
 
+l (){
+     ls
+}
+
 harvard (){
 ssh -L ${1}:localhost:${1} apalrecha@login.rc.fas.harvard.edu;
 }
