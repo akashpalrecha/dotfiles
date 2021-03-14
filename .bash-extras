@@ -45,6 +45,7 @@ loadconda () { module load Anaconda3/5.0.1-fasrc02; }
 loadmatlab () { module load matlab/R2019a-fasrc01; }
 loadcuda () { module load cuda/9.0-fasrc02 cudnn/7.0_cuda9.0-fasrc01; }
 
+gpujob_test() { srun --pty -p gpu_test -t 0-${1}:${2} --mem ${3} -n ${4} -N 1 --gres=gpu:1 /bin/bash; }
 gpujob() { srun --pty -p cox -t 0-${1}:${2} --mem ${3} -n ${4} -N 1 --gres=gpu:1 /bin/bash; }
 gpujob16() { srun --pty -p seas_dgx1 -t 0-${1}:${2} --mem ${3} -n ${4} -N 1 --exclude=seasdgx103 --gres=gpu:1 /bin/bash; }
 cpujob() { srun --pty -p cox -t 0-${1}:${2} --mem ${3} -n ${4} -N 1 /bin/bash; }
