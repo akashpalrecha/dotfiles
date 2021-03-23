@@ -33,9 +33,9 @@ polo (){
         cd $cwd
 }
 
-l (){
-     ls
-}
+#l(){
+#     ls
+# }
 
 harvard (){
 ssh -L ${1}:localhost:${1} apalrecha@login.rc.fas.harvard.edu;
@@ -51,3 +51,9 @@ gpujob16() { srun --pty -p seas_dgx1 -t 0-${1}:${2} --mem ${3} -n ${4} -N 1 --ex
 cpujob() { srun --pty -p cox -t 0-${1}:${2} --mem ${3} -n ${4} -N 1 /bin/bash; }
 fwport() { ssh -L ${1}:localhost:${1} ${2}; }
 
+countfiles (){
+	for folder in ls -d */
+	do
+		echo "${folder} $(ls -l $folder | wc -l)"
+	done
+}
